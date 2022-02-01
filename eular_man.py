@@ -50,6 +50,8 @@ plt.show()
 for t in range(vol):
     print(t*d_t, X[t])
     
-    잘 되는거?
+    잘 되는가??
+    
+    groung control to major Tom
     '''
 

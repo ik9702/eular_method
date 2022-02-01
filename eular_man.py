@@ -49,5 +49,7 @@ plt.show()
 '''
 for t in range(vol):
     print(t*d_t, X[t])
+    
+    잘 되는거?
     '''
 

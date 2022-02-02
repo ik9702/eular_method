@@ -55,3 +55,4 @@ plt.plot(T, X,'r,')
 plt.axis([0,rng,-5,5])
 plt.show()
 
+

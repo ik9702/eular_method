@@ -30,10 +30,16 @@ X[0]=X0
 T = np.zeros(vol)
 for t in range(1,vol):
     V[t] = (1-(d_t*B)/A)*V[t-1]+(np.sin(F*(t-1)*d_t)*E/A-C*X[t-1]/A-D*(X[t-1]**3)/A)*d_t
+    print("V 생성중...", int(100*t/vol),"%")
+print("V 생성중...", 100,"%")    
+print("완료")
 
 for t in range(1,vol):
     X[t] = X[t-1] + V[t-1]*d_t
     T[t] = d_t*t
+    print("X 생성중...", int(100*t/vol),"%")
+print("X 생성중...", 100,"%")    
+print("완료")    
 
 # t, x = sp.symbols('t x')
 # x = sp.symbols('f', cls=sp.Function) 

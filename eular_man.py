@@ -16,8 +16,8 @@ D = 0.1 #e
 E = 50  #a
 F = 2   #o
 
-X0 = 1
-V0 = 0
+X0 = 0
+V0 = 1
 d_t = 10**-2
 rng = 100
 vol = int(rng/d_t)
@@ -35,8 +35,8 @@ for t in range(0, vol):
     
 # V배열 생성
 for t in range(0, vol-1):
-    V[t+1] = V[t] -(B*V[t]+C*X[t]+D*X[t]**3-E*np.sin(F*T[t]))/A
-    X[t+1] = X[t] + V[t]*d_t
+    V[t+1] = V[t] -(B*V[t]+C*X[t]+D*X[t]**3-E*np.sin(F*T[t]))*d_t/A
+    X[t+1] = X[t] + V[t]*d_t        
 
 # t, x = sp.symbols('t x')
 # x = sp.symbols('f', cls=sp.Function) 

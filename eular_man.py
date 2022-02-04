@@ -18,7 +18,7 @@ F = 2   #o
 
 X0 = 1
 V0 = 0
-d_t = 10**-3
+d_t = 10**-2
 rng = 100
 vol = int(rng/d_t)
 
@@ -28,18 +28,15 @@ V[0]=V0
 X = np.zeros(vol)
 X[0]=X0
 T = np.zeros(vol)
-for t in range(1,vol):
-    V[t] = (1-(d_t*B)/A)*V[t-1]+(np.sin(F*(t-1)*d_t)*E/A-C*X[t-1]/A-D*(X[t-1]**3)/A)*d_t
-    print("V 생성중...", int(100*t/vol),"%")
-print("V 생성중...", 100,"%")    
-print("완료")
 
-for t in range(1,vol):
-    X[t] = X[t-1] + V[t-1]*d_t
+# T배열 생성
+for t in range(0, vol):
     T[t] = d_t*t
-    print("X 생성중...", int(100*t/vol),"%")
-print("X 생성중...", 100,"%")    
-print("완료")    
+    
+# V배열 생성
+for t in range(0, vol-1):
+    V[t+1] = V[t] -(B*V[t]+C*X[t]+D*X[t]**3-E*np.sin(F*T[t]))/A
+    X[t+1] = X[t] + V[t]*d_t
 
 # t, x = sp.symbols('t x')
 # x = sp.symbols('f', cls=sp.Function) 

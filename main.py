@@ -14,9 +14,9 @@ f = 2   #o
 X_0 = 0
 V_0 = 1
 t_0 = 0
-t_end = 99
+t_end = 100
 d_t = 10**-3
-Vol = int((t_end-t_0+1)/d_t)
+Vol = int((t_end-t_0)/d_t)
 para = np.array([[a, b, c, d, e, f], [X_0, V_0, t_0, t_end, d_t, 0]])
 
 
@@ -28,9 +28,9 @@ error[1,:] = np.sqrt((s_m[1]-e_m[1])**2)
 error[0,:] = s_m[0]
 
 
-plt.plot(e_m[0], e_m[1])
-plt.plot(s_m[0], s_m[1])
-plt.plot(error[0], error[1])
+plt.plot(e_m[0], e_m[1], 'r,')
+plt.plot(s_m[0], s_m[1], 'g,')
+plt.plot(error[0], error[1], 'b,')
 
 
 

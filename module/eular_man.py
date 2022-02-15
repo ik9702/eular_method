@@ -17,7 +17,7 @@ def eular_method(P):
     V0 = P[1,1]
     D_t = P[1,4]
     rng = P[1,3]-P[1,2]
-    vol = int((1+rng)/D_t)
+    vol = int(rng/D_t)
     
     V = np.zeros(vol)
     V[0]=V0

@@ -18,8 +18,8 @@ def sci_method(P):
     t_end = int(P[1,3])
     D_t = P[1,4]
     rng = int(t_end - t_0)
-    vol = P[1,3]-P[1,2]+1
-    vol /= P[1,4]
+    vol = P[1,3]-P[1,2]
+    vol /= D_t
     vol = int(vol)
     
     def dXdt(t, X):

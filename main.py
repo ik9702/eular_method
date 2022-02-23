@@ -1,5 +1,4 @@
 import numpy as np
-import scipy
 import matplotlib.pyplot as plt
 from module import eular_man as em, sci_method as sm
 
@@ -27,7 +26,7 @@ error[1,:] = np.sqrt((s_m[1]-e_m[1])**2)
 
 error[0,:] = s_m[0]
 
-
+plt.title(f"delta_t: {d_t:>f}")
 plt.plot(e_m[0], e_m[1], 'r,')
 plt.plot(s_m[0], s_m[1], 'g,')
 plt.plot(error[0], error[1], 'b,')
